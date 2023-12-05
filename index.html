@@ -13,22 +13,24 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Ephesis&family=Fira+Sans&family=Oswald&family=PT+Serif&family=Roboto:wght@400;900&family=Source+Code+Pro:ital,wght@1,400;1,700&display=swap"
             rel="stylesheet">
-            <!-- font  "Source Code Pro"-->
+        <!-- font "Source Code Pro"-->
         <link rel="stylesheet" href="styles/stlyes.css">
+        <link rel="stylesheet" href="styles/overlays.css">
+        <link rel="stylesheet" href="styles/configuration.css">
     </head>
     <body>
         <!-- header -->
+        <div id="backdrop"> </div>
         <header id="main-header">
             <h1>Play Tic, Tac, Toe</h1>
             <p>Built width Html, CSS, Javasrcipt and -of course - lots of love</p>
         </header>
-        
-        <form action=""></form>
+
         <!-- main -->
         <main>
-            <aside>
-                <h2>Choose your name(이름을 선택하세요.)</h2>
-                <form>
+            <aside class="modal" id="configuration">
+                <h2>Choose your name(이름을 선택하세요.) </h2>
+            <form>
                     <div>
                         <label for="playername">Player name(플레이어 이름)</label>
                         <input type="text" name="username" id="playername">
