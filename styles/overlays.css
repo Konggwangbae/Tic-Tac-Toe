@@ -7,8 +7,8 @@
     background-color: white;
     padding: 1rem;
     border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0.2);
-    /* display: none; */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: none;
 }
 
 #backdrop {
@@ -19,6 +19,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     /* background color 회색 빛이 나게 해서 플레이어 이름을 입력시 배경이 어둡게 나올 수 있게 만든다. */
+    display: none;
 }
 
 @media (min-width: 48rem) {
