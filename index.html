@@ -14,9 +14,14 @@
             href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Ephesis&family=Fira+Sans&family=Oswald&family=PT+Serif&family=Roboto:wght@400;900&family=Source+Code+Pro:ital,wght@1,400;1,700&display=swap"
             rel="stylesheet">
         <!-- font "Source Code Pro"-->
-        <link rel="stylesheet" href="styles/stlyes.css">
+        <link rel="stylesheet" href="styles/styles.css">
         <link rel="stylesheet" href="styles/overlays.css">
         <link rel="stylesheet" href="styles/configuration.css">
+        <link rel="stylesheet" href="styles/game.css">
+        <script src="scripts/config.js" defer></script>
+        <script src="scripts/game.js" defer></script>
+        <script src="scripts/app.js" defer></script>
+
     </head>
     <body>
         <!-- header -->
@@ -29,12 +34,14 @@
         <!-- main -->
         <main>
             <aside class="modal" id="config-overlay">
-                <h2> Choose your name </h2>
-                
+                <h2>
+                    Choose your name
+                </h2>
+
                 <form>
                     <div class="form-control">
                         <label for="playername">Player name</label>
-                        <input type="text" name="username" id="playername" />
+                        <input type="text" name="username" id="playername"/>
                         <!-- label에 for를 적용 해서 input id""에 playername이 적용 될 수 있도록 설정 -->
                     </div>
                     <div>
@@ -48,19 +55,20 @@
                 <ol>
                     <li>
                         <article>
-                            <h2>Player1</h2>
-                            <h3>PLAYER NAME <br>(플레이어1 이름)</h3>
-                            <p class="plaeyer-symbol">X</p>
-                            <button class="btn btn-alt">Edit</button>
+                            <h2>Player 1</h2>
+                            <h3>PLAYER NAME
+                                <br>(플레이어1 이름)</h3>
+                            <p class="player-symbol">X</p>
+                            <button class="btn btn-alt" id="edit-player-1-btn">Edit</button>
                         </article>
                     </li>
 
                     <li>
                         <article>
-                            <h2>Player2</h2>
-                            <h3>PLAYER NAME <br>(플레이어2 이름)</h3>
-                            <p class="plaeyer-symbol">O</p>
-                            <button class="btn btn-alt">Edit</button>
+                            <h2>Player 2</h2>
+                            <h3> PLAYER NAME <br>(플레이어2 이름)</h3>
+                            <p class="player-symbol">O</p>
+                            <button class="btn btn-alt" id="edit-player-2-btn">Edit</button>
                         </article>
                     </li>
                 </ol>
@@ -68,23 +76,25 @@
             </section>
 
             <section id="active-game">
-                <article>
-                    <h3>You won, <span id="winner-name"> PLAYER NAME</span>!</h3>
+                <article id="game-over">
+                    <h3>You won,
+                        <span id="winner-name">
+                            PLAYER NAME</span>!</h3>
                     <p>Click "Start New Game" above, to Start a new game!!</p>
                 </article>
 
                 <p>It's your turn
                     <span id="acivie-player-name">PLAYER NAME</span>!</p>
-                <ol>
+                <ol id="game-board">
+                    <li class="disabled">X</li>
                     <li></li>
-                    <li></li>
-                    <li></li>
+                    <li class="disabled">o</li>
 
                     <li></li>
-                    <li></li>
+                    <li class="disabled">x</li>
                     <li></li>
 
-                    <li></li>
+                    <li class="disabled">o</li>
                     <li></li>
                     <li></li>
                     <!-- 읽기 쉽게 공백을 둠 큰 이유는 없다. -->
