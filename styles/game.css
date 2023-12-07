@@ -9,7 +9,7 @@
     max-width: 40rem;
     margin: auto;
     padding: 1rem 2rem;
-    background-color: rgb(50 , 5,87);
+    background-color: rgb(50, 5, 87);
     color: white;
     box-shadow: 0 2px 8px rgb(0, 0, 0, 02);
     border-radius: 4px;
@@ -21,9 +21,9 @@
     margin: 0.5rem 0;
 }
 
-#acivie-player-name {
-    font-size: bold;
-    color: rgb(50 , 5, 87);
+#active-player-name {
+    font-weight: bold;
+    color: rgb(50, 5, 87);
 } 
 
 #game-board {
@@ -31,13 +31,13 @@
     margin: 1rem 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(3, 6rem); /* 6rem 6rem 6rem*/
-    grid-template-rows: repeat(3, 6rem); /* 6rem 6rem 6rem*/
+    grid-template-columns: repeat(3, 6rem); /* 6rem 6rem 6rem */
+    grid-template-rows: repeat(3, 6rem); /* 6rem 6rem 6rem */
     justify-content: center;
     gap: 0.5rem;
 }
 
-#game-board li{
+#game-board li {
     background-color: rgb(215, 187, 247);
     border-radius: 2px;
     cursor: pointer;
@@ -54,5 +54,8 @@
 
 #game-board li.disabled {
     background-color: rgb(112, 13, 204);
+    color: white;
     cursor: default;
 }
+
+/* 내꺼 */
