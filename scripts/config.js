@@ -1,4 +1,5 @@
-function openPlayerConfig() {
+function openPlayerConfig(event) {
+    editedPlayer = +event.target.dataset.playerid; // +는 '1' => 1 1씩 더해준다.
     playerConfigOverlayElement.style.display = 'block';
     backdropElement.style.display = 'block';
 }
@@ -9,6 +10,7 @@ function closePlayerConfig() {
     formElement.firstElementChild.classList.remove('error');
     errorsOutputElement.textContent = '';
    // errorsOutputElement.textContent = ''; 에러 메세지 제거 코드
+    formElement.firstElementChild.lastElementChild.value = ''
 }
 
 function savePlayerConfig(event) {
@@ -23,4 +25,11 @@ function savePlayerConfig(event) {
         return;
     }
 
+
+const updatedPlayerDataElement = document.getElementById('player-' + editedPlayer + '-data');
+updatedPlayerDataElement.children[1].textContent = enteredPlayername;
+
+players[editedPlayer - 1].name = enteredPlayername;
+
+closePlayerConfig();
 }
