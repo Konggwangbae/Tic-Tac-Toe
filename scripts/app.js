@@ -1,13 +1,14 @@
 let editedPlayer = 0;
+let activePlayer = 0;
 
 const players = [
     {
         name: '',
-        Symbol: 'X'
+        symbol: 'X'
     },
     {
         name:'',
-        Symbol: 'O'
+        symbol: 'O'
     }
 ];
 
@@ -16,11 +17,14 @@ const backdropElement = document.getElementById('backdrop');
 const formElement = document.querySelector('form');
 const errorsOutputElement = document.getElementById('config-errors');
 const gameAreaElement = document.getElementById('active-game');
+const activePlayerNameElement = document.getElementById('acttive-player-name')
 
 const editPlayer1BtnElement = document.getElementById('edit-player-1-btn');
 const editPlayer2BtnElement = document.getElementById('edit-player-2-btn');
 const cancelConfigBtnElement = document.getElementById('cancel-config-btn');
 const startNewGameElement = document.getElementById('start-game-btn');
+// const gameFieldElements = document.querySelectorAll('#game-board li');
+const gameBoardElement = document.getElementById('game-board');
 
 editPlayer1BtnElement.addEventListener('click', openPlayerConfig);
 editPlayer2BtnElement.addEventListener('click', openPlayerConfig);
@@ -32,3 +36,9 @@ formElement.addEventListener('submit', savePlayerConfig);
 
 startNewGameElement.addEventListener('click', startNewGame);
 // start New Game을 클릭 했을 때 게임 보드판이 실행이 될 수 있도록 설정
+
+// for (const gameFieldElement of gameFieldElements) {
+//     gameFieldElement.addEventListener('click', selectGameField);
+// }
+
+gameBoardElement.addEventListener('click', selectGameField);

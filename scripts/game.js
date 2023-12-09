@@ -4,5 +4,26 @@ function startNewGame() {
         return;
     }
 
+    activePlayerNameElement.textContent = players[activePlayer].name;
     gameAreaElement.style.display = 'block';
+}
+
+function switchPlayer() {
+    if (activePlayer === 0) {
+        activePlayer = 1;
+    } else {
+        activePlayer = 0;
+    }
+    activePlayerNameElement.textContent = players[activePlayer].name;
+}
+
+function selectGameField(event) {
+    // console.log(event.target.tagName)
+    if (event.target.tagName !== 'Li') {
+        return;
+    }
+
+    event.target.textContent = players[activePlayer].symbol;
+    event.target.classList.add('disabled');
+    switchPlayer();
 }
