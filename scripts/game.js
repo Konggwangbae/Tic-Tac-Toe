@@ -19,11 +19,20 @@ function switchPlayer() {
 
 function selectGameField(event) {
     // console.log(event.target.tagName)
-    if (event.target.tagName !== 'Li') {
+    if (event.target.tagName !== 'LI') {
         return;
     }
 
-    event.target.textContent = players[activePlayer].symbol;
-    event.target.classList.add('disabled');
+    const selectField =event.target;
+
+    selectField.textContent = players[activePlayer].symbol;
+    selectField.target.classList.add('disabled');
+
+    const selectedColumn = selectField.dataset.col - 1;
+    const selectedRow = selectField.dataset.row - 1;
+
+    gameData[selectedRow][selectedColumn] = activePlayer + 1;
+    console.log(gameData);
+    
     switchPlayer();
 }
